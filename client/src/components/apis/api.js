@@ -2,7 +2,7 @@ import axios from "axios";
 import state from "../../redux-toolkit"
 let config;
 
-const url = "http://localhost:5000";  
+const url = process.env.REACT_APP_API_URL;  
 
 const setAuth = () => {
     config = {
