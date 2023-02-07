@@ -38,7 +38,13 @@ export default ({ app }: { app: express.Application }) => {
   app.use(compression());
 
   // enable cors
-  app.use(cors());
+  const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+    credentials: true,
+  };
+  app.use(cors(corsOptions));
+
 
   // jwt authentication
   app.use(passport.initialize());
